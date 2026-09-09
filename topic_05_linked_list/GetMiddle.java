@@ -34,15 +34,13 @@ public class GetMiddle {
     }
 
     // get middle
+    // for even list it finds out the first middle
     public void getMiddle() {
         Node slow = head;
         Node fast = head;
 
-        if (fast != null && fast.next.next != null) {
-            return;
-        }
-
-        while (slow != null && fast.next.next != null) {
+        // second middle logic is: while (fast != null && fast.next != null)
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -60,7 +58,6 @@ public class GetMiddle {
         list.add(6);
         list.add(7);
         list.add(8);
-        list.add(9);
 
         list.getMiddle();
     }
