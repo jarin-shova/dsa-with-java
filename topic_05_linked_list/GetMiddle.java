@@ -35,7 +35,7 @@ public class GetMiddle {
 
     // get middle
     // for even list it finds out the first middle
-    public void getMiddle() {
+    public int getMiddle() {
         Node slow = head;
         Node fast = head;
 
@@ -45,7 +45,7 @@ public class GetMiddle {
             fast = fast.next.next;
         }
 
-        System.out.println("middle node is " + slow.data);
+        return slow.data;
     }
 
     public static void main(String[] args) {
@@ -59,6 +59,6 @@ public class GetMiddle {
         list.add(7);
         list.add(8);
 
-        list.getMiddle();
+        System.out.println(list.getMiddle()); // 4
     }
 }
