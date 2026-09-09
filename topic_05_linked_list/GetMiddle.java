@@ -1,5 +1,7 @@
 package topic_05_linked_list;
 
+// Time complexity - O(n)
+// Space complexity - O(1)  
 // find out the middle of a linked list
 public class GetMiddle {
     class Node {
@@ -33,12 +35,12 @@ public class GetMiddle {
 
     // get middle
     public void getMiddle() {
-        if (head == null || head.next.next == null) {
-            return;
-        }
-
         Node slow = head;
         Node fast = head;
+
+        if (fast != null && fast.next.next != null) {
+            return;
+        }
 
         while (slow != null && fast.next.next != null) {
             slow = slow.next;
