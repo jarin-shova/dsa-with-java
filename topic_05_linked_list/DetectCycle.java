@@ -13,7 +13,7 @@
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-public class Solution {
+public class DetectCycle {
     public boolean hasCycle(ListNode head) {
 
         ListNode fast = head;
