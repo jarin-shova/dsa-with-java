@@ -2,6 +2,15 @@ package topic_12_graph;
 
 import java.util.ArrayList;
 
+// Time Complexity:
+// Creating the adjacency list: O(V)
+// Adding all edges: O(E)
+// Printing neighbours of a vertex: O(degree(V))
+// Overall Time Complexity: O(V + E)
+
+// Space Complexity:
+// O(V + E) for storing the adjacency list
+
 public class CreateAWeightedGraphAndPrintNeighbour {
 
   static class Edge {
