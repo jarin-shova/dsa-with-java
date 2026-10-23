@@ -70,7 +70,7 @@ public class BFS {
     int V = 7;
     ArrayList<Edge> graph[] = new ArrayList[V];
     createGraph(graph);
-    bfs(graph, V); // 1 2 3 4 5 6
+    bfs(graph, V); // 0 1 2 3 4 5 6
     System.out.println();
   }
 }
