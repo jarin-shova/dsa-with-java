@@ -44,11 +44,11 @@ public class BFS {
   }
 
   // Time complexity = O(V + E)
-  public static void bfs(ArrayList<Edge> graph[], int V) {
+  // Space complexity = O(V)
+  public static void bfs(ArrayList<Edge> graph[], int V, boolean visited[], int start) {
     Queue<Integer> q = new LinkedList<>();
-    boolean visited[] = new boolean[V];
 
-    q.add(0);
+    q.add(start);
 
     while (!q.isEmpty()) {
       int curr = q.remove();
@@ -70,7 +70,14 @@ public class BFS {
     int V = 7;
     ArrayList<Edge> graph[] = new ArrayList[V];
     createGraph(graph);
-    bfs(graph, V); // 0 1 2 3 4 5 6
+
+    // if all the nodes of the graph are not connected (if there is sub graph)
+    boolean visited[] = new boolean[V];
+    for (int i = 0; i < V; i++) {
+      if (visited[i] == false) {
+        bfs(graph, V, visited, i); // 0 1 2 3 4 5 6
+      }
+    }
     System.out.println();
   }
 }

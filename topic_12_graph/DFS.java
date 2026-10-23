@@ -44,6 +44,7 @@ public class DFS {
   }
 
   // Time complexity = O(V + E)
+  // Space complexity = O(V)
   public static void dfs(ArrayList<Edge> graph[], int current, boolean visited[]) {
     System.out.print(current + " ");
     visited[current] = true;
@@ -62,8 +63,14 @@ public class DFS {
 
     createGraph(graph);
 
+    // if all the nodes of the graph are not connected (if there is sub graph)
     boolean visited[] = new boolean[V];
-    dfs(graph, 0, visited); // 0 1 3 4 2 5 6
+    for (int i = 0; i < V; i++) {
+      if (visited[i] == false) {
+        dfs(graph, i, visited); // 0 1 3 4 2 5 6
+      }
+    }
+
     System.out.println();
   }
 }
